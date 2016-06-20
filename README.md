@@ -1,4 +1,4 @@
-<h1>Chat Application Build with Node.js</h1>h1>
+<h1>Chat Application Build with Node.js</h1>
 <p>This is a simple chat application build with Node.JS and Express.js on Jade Templating engine.</p>
 
 <h2>Technologies Used:</h2>
