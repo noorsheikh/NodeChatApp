@@ -6,8 +6,9 @@ block content
   table.table.table-striped
     thead
       tr
-        th Action
+        th
         th Name
+        th
         th Id
     tbody
       each room in rooms
@@ -15,5 +16,7 @@ block content
           td(style="width: 50px"): a(href="/admin/rooms/delete/#{room.id}")
             span.glyphicon.glyphicon-remove
           td= room.name
+          td(style="width: 50px"): a(href="/admin/rooms/edit/#{room.id}")
+            span.glyphicon.glyphicon-pencil
           td= room.id
     
