@@ -1,18 +1,30 @@
 extends layout
 
 block content
+  article.text-center.col-md-12
+    .row.add-top-quarter
+      .col-md-4.news-sidebar.text-left
+        h3.font2.dark Available Chatrooms
+        h3.font4.grey.sub-heading List of available chatrooms
+        .liner.color-bg
+        ul.font4.dark#rooms
+      .col-md-8.text-left.news-post
+        h3.font2.dark#roomName
+        h3.font4.grey.sub-heading Message box for the selected chatroom
+        .liner.color-bg
+        .add-top-quarter.text-left
+          textarea#messages.form-control(rows=15)
+        .add-top-quarter.text-left
+          button.btn.btn-otto.btn-otto-dark.btn-xs#delete(type='button')
+            span.step.size-21
+              i.icon.ion-android-delete|  Delete All Messages
+        .add-top-quarter.text-left
+          h3.font2.dark Post A Message
+          textarea#message.form-control(rows=2, placeholder="Type your message here...")
+        .add-top-quarter.text-left
+          button.btn.btn-otto.btn-otto-dark#post(type='button')
+            span.step.size-21
+              i.icon.ion-android-delete|  Post Message
 
-    div.row
-        div.col-md-4
-            h3 Rooms
-            div#rooms.list-group
-        div.col-md-8
-            h3#roomName
-            textarea#messages.form-control(rows=15)
-            button.btn.btn-default#delete Delete All Messages
-            h3 Post A Message
-            textarea#message.form-control(rows=2)
-            button.btn.btn-primary#post Post
-
-    script(src="/jquery.min.js",type="text/javascript")
-    script(src="/home.js",type="text/javascript")
+  script(src="/jquery.min.js",type="text/javascript")
+  script(src="/home.js",type="text/javascript")

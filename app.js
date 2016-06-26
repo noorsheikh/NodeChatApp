@@ -13,7 +13,7 @@ app.use(bodyParser.json());
 
 app.get('/', function(req, res){
 	res.render("home", {
-		title: "Home Page"
+		title: "Node Chat Application"
 	});
 });
 

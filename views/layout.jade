@@ -3,21 +3,43 @@ html(lang='en')
   head
     meta(charset='UTF-8')
     meta(http-equiv='X-UA-Compatible', content='IE=edge')
-    meta(name='viewport', content='width=device-width, initial-scale=1')
+    meta(name='viewport', content='width=device-width, initial-scale=1.0')
     title= title
+    link(href='//fonts.googleapis.com/css?family=Raleway:400,300,600%7CMontserrat:400,700%7COpen+Sans:400,300,700,800', rel='stylesheet', type='text/css')
+    link(href='http://fonts.googleapis.com/css?family=Inconsolata:400,700', rel='stylesheet', type='text/css')
+
     link(rel='stylesheet', href='/css/bootstrap.min.css')
     link(rel='stylesheet', href='/style.css')
+
+    link(rel='stylesheet', href='/stylesheets/ionicons.min.css')
+    link(rel='stylesheet', href='/stylesheets/isotope.css')
+    link(rel='stylesheet', href='/stylesheets/venobox.css')
+    link(rel='stylesheet', href='/stylesheets/owl.carousel.css')
+    link(rel='stylesheet', href='/stylesheets/sidepanel.css')
+    link(rel='stylesheet', href='/stylesheets/elements.css')
+    link(rel='stylesheet', href='/stylesheets/slimmenu.css')
+    link(rel='stylesheet', href='/stylesheets/main.css')
+    link(rel='stylesheet', href='/stylesheets/main-bg.css')
+    link(rel='stylesheet', href='/stylesheets/main-responsive.css')
+
+    //
+      <link rel="stylesheet/less" type="text/css" href="less/color.less">
+      <link rel="stylesheet/less" type="text/css" href="less/fonts.less">
+      <script src="less/less.min.js"></script>
   body
-    nav.navbar.navbar-inverse.navbar-fixed-top
-      .container
-        #navbar.collapse.navbar-collapse
-          ul.nav.navbar-nav
-            li.active
-              a(href='/') Home
-            li
-              a(href='/admin/rooms') Chat Rooms
-            li
-              a(href='/admin/users') Users
-    .container
-      .main-content
-        block content
+  .container
+    article.text-center.col-md-12
+      .row.add-top-quarter
+        h3.font2.dark Node Chat Application
+    article.text-center.col-md-12
+      .row.add-top-quarter
+        nav.navbar.navbar-default
+          #navbar.navbar-collapse
+            ul.nav.navbar-nav
+              li.active
+                a(href='/') Home
+              li
+                a(href='/admin/rooms') Chat Rooms
+              li
+                a(href='/admin/users') Users
+    block content

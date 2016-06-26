@@ -9,7 +9,7 @@ $(function () {
         roomId = rooms[0].id;
         getMessages();
         $.each(rooms, function (key, room) {
-            var a = '<a href="#" data-room-id="' + room.id + '" class="room list-group-item">' + room.name + '</a>';
+            var a = '<li><a href="#" data-room-id="' + room.id + '" class="room">' + room.name + '</a></li>';
             $("#rooms").append(a);
         });
 

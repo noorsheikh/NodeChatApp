@@ -1,22 +1,31 @@
 extends layout
 
 block content
-  h1 Chat Rooms
-  a.btn.btn-primary(href="/admin/rooms/add") Create a new chat room
-  table.table.table-striped
-    thead
-      tr
-        th
-        th Name
-        th
-        th Id
-    tbody
-      each room in rooms
-        tr
-          td(style="width: 50px"): a(href="/admin/rooms/delete/#{room.id}")
-            span.glyphicon.glyphicon-remove
-          td= room.name
-          td(style="width: 50px"): a(href="/admin/rooms/edit/#{room.id}")
-            span.glyphicon.glyphicon-pencil
-          td= room.id
-    
+  article.text-center.col-md-12
+    .row.add-top-quarter
+      .col-md-12.news-sidebar.text-left
+        .add-top-quarter.text-left
+          h3.font2.dark Chatrooms Manager
+          h3.font4.grey.sub-heading Edit your chatrooms settings from here
+          .liner.color-bg
+        .add-top-quarter.text-left
+          a.btn.btn-otto.btn-otto-dark(href="/admin/rooms/add")
+            span.step.size-21
+              i.icon.ion-android-checkbox-outline|  Create a new chat room
+        .add-top-quarter.text-left
+          table.table.font4.dark
+            thead
+              tr
+                th
+                th Name
+                th
+                th Id
+            tbody
+              each room in rooms
+                tr
+                  td(style="width: 50px"): a(href="/admin/rooms/delete/#{room.id}")
+                    span.glyphicon.glyphicon-remove
+                  td= room.name
+                  td(style="width: 50px"): a(href="/admin/rooms/edit/#{room.id}")
+                    span.glyphicon.glyphicon-pencil
+                  td= room.id

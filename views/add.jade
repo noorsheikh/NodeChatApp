@@ -1,12 +1,20 @@
 extends layout
 
 block content
-  h1 Create a New Chat Room
-
-  form(method="POST")
-    fieldset.form-group
-      label(for="name") Name:
-      input.form-control(type="text", name="name", placeholder="Enter a name")
-      small.text-muted Give your chat room a meaningful name for people to refer to it.
-    button.btn.btn-primary(type="submit") Create new chat room
-    a.btn.btn-default(href="/admin/rooms") Cancel
+  article.text-center.col-md-12
+    .row.add-top-quarter
+      .col-md-12.news-sidebar.text-left
+        .add-top-quarter.text-left
+          h3.font2.dark Create a New Chatroom
+          h3.font4.grey.sub-heading Add a new chatroom
+          .liner.color-bg
+        .add-top-quarter.text-left
+          form(method="POST")
+            fieldset.form-group
+              label(for="name") Name:
+              input.form-control(type="text", name="name", placeholder="Enter a name")
+              small.text-muted Give your chat room a meaningful name for people to refer to it.
+            .add-top-quarter.text-left
+              .post-tags
+                button.btn.btn-otto.btn-otto-dark(type="submit") Create new chat room
+                a.btn.btn-otto.btn-otto-dark(href="/admin/rooms") Cancel
