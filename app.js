@@ -5,10 +5,7 @@ var bodyParser = require('body-parser');
 app.set("views", "./views");
 app.set("view engine", "jade");
 
-var fs = require("fs");
-var accessLogStream = fs.createWriteStream(__dirname + '/access.log', {flags: 'a'});
-
-app.use(require("morgan")("combined", {stream: accessLogStream}));
+app.use(require("./logging.js"));
 
 app.use(express.static("public"));
 app.use(express.static("node_modules/bootstrap/dist"));
@@ -24,6 +21,9 @@ app.get('/', function(req, res){
 		title: "Node Chat Application"
 	});
 });
+
+var authRouter = require('./auth');
+app.use(authRouter);
 
 var adminRouter = require('./admin');
 app.use('/admin', adminRouter);
