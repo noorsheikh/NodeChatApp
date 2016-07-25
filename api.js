@@ -4,6 +4,7 @@ var _ = require('lodash');
 var uuid = require('node-uuid');
 var rooms = require("./data/rooms.json");
 var messages = require("./data/messages.json");
+var users = require('./data/users.json');
 module.exports = router;
 
 router.get("/rooms", function(req, res){
@@ -14,7 +15,11 @@ router.route("/rooms/:roomId/messages")
 	.get(function(req, res){
 		var roomId = req.params.roomId;
 		var roomMessages = messages
-			.filter(m => m.roomId == roomId);
+			.filter(m => m.roomId === roomId)
+			.map(m => {
+				var user = _.find(users, u => u.id === m.userId);
+				return {text: `${user.name}: ${m.text}`};
+			});
 
 		var room = _.find(rooms, r => r.id === roomId);
 		if(!room) {
@@ -32,7 +37,7 @@ router.route("/rooms/:roomId/messages")
 		var message = {
 			roomId: roomId,
 			text: req.body.text,
-			userId: "44f885e8-87e9-4911-973c-4074188f408a",
+			userId: req.user.id,
 			id: uuid.v4()
 		};
 
